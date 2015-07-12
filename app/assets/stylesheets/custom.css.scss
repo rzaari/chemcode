@@ -1,0 +1,12 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.navbar{
+	background-color: #1abc9c;
+	border:none;
+}
+
+ .navbar-default .navbar-header .navbar-brand {
+    color: white;
+}
+
