@@ -2,5 +2,20 @@
 <h1><i class="fa fa-code"></i> Chem Code</h1>
 <br>
 <h3>Search, save and share chemistry code</h3>
-<h3>GAMESS, Molpro, Guassian</h3>
+<h3>GAMESS, Molpro, Gaussian</h3>
 </div>
+
+
+<div class="row"> 
+     <ul class="list-group">
+       <% @microposts.each do |micropost| %>
+         <li class="list-group-item">
+	         <h4 class="list-group-item-heading">
+	        	<%= micropost.user.username %>
+	         </h4>
+	         <p class="list-group-item-text">
+	        	<%= micropost.content %>
+	         </p>
+         </li>
+       <% end %>
+    </ul>

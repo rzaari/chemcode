@@ -32,6 +32,8 @@ gem 'sdoc', '0.4.0',          group: :doc
 gem 'spring',        group: :development
 # Devise gem (user authentication)
 gem 'devise', '3.4.1'
+# Faker gem : generate 'dummy' Lorem Ipsum type text 
+gem 'faker', '~> 1.4.3'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '3.1.7'
 # Use unicorn as the app server
