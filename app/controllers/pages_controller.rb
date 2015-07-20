@@ -1,7 +1,8 @@
 class PagesController < ApplicationController
 
 	def home #we want a home action
-		@microposts = Micropost.all 
+    @allposts = Micropost.all
+    @micropost = current_user.microposts.build if current_user
 	end
 
 	def about

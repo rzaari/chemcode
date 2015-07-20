@@ -1,20 +1,27 @@
-<div class="jumbotron text-center">
-<h1><i class="fa fa-code"></i> Chem Code</h1>
-<br>
-<h3>Search, save and share chemistry code</h3>
-<h3>GAMESS, Molpro, Gaussian</h3>
+  <div class="row">
+<% if current_user %>
+    <div class="col-md-4">
+        <%= render 'microposts/micropost_form' %>
+    </div>
+<% else %>
+	<div class="jumbotron text-center">
+	<h1><i class="fa fa-code"></i> Chem Code</h1>
+	<br>
+	<h3>Search, save and share chemistry code</h3>
+	<h3>GAMESS, Molpro, Gaussian</h3>
+	</div>
+<% end %>
 </div>
-
 
 <div class="row"> 
      <ul class="list-group">
-       <% @microposts.each do |micropost| %>
+       <% @allposts.each do |micropost| %>
          <li class="list-group-item">
 	         <h4 class="list-group-item-heading">
 	        	<%= micropost.user.username %>
 	         </h4>
 	         <p class="list-group-item-text">
-	        	<%= micropost.content %>
+	        	<%= simple_format(micropost.content) %>
 	         </p>
          </li>
        <% end %>
