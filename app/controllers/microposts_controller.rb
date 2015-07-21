@@ -8,7 +8,7 @@ before_action :logged_in_user, only: [:create]
       flash[:success] = "Code sucessfully submitted."
       redirect_to root_url
     else
-      flash[:error] = "Error submitting code!"
+      flash[:warning] = "Error submitting code!"
       redirect_to submit_path
     end
   end

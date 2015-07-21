@@ -1,7 +1,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-.navbar{
+.navbar {
 	background-color: #1abc9c;
 	border:none;
 }
@@ -12,4 +12,8 @@
 
 .navbar-default .navbar-nav > li > a {
 	color: white;
+}
+
+.glyphicon {
+	color:#1abc9c;
 }

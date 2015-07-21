@@ -1,6 +1,5 @@
 
 <%= form_for(@micropost) do |f| %>
-  <%= render '/error_messages', object: f.object %>
   <div class="form-group">
     <%= f.text_field :heading, placeholder: "Descriptive heading", class: "form-control" %>
   </div>
