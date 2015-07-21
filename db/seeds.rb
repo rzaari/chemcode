@@ -18,9 +18,10 @@ for i in 1..6 do
 	password = Faker::Internet.password(8)
  	email = Faker::Internet.email
  	content = Faker::Lorem.paragraph(10)
+ 	heading = Faker::Lorem.sentence
 
 	User.create!( email: email, username: username, password: password, password_confirmation: password ) 
- 	Micropost.create!(content: content, user_id: User.find(i).id) 
+ 	Micropost.create!(content: content, user_id: User.find(i).id, heading: heading ) 
 
  end
 

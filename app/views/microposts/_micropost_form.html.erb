@@ -1,7 +1,11 @@
+
 <%= form_for(@micropost) do |f| %>
   <%= render '/error_messages', object: f.object %>
-  <div class="field">
-    <%= f.text_area :content, placeholder: "Enter your code..." %>
+  <div class="form-group">
+    <%= f.text_field :heading, placeholder: "Descriptive heading", class: "form-control" %>
   </div>
-  <%= f.submit "Post", class: "btn btn-primary" %>
+  <div class="form-group">
+    <%= f.text_area :content, placeholder: "Enter your code...", class: "form-control", rows: 15 %>
+  </div>
+  <%= f.submit "Post Code", class: "btn btn-primary" %>
 <% end %>

@@ -24,20 +24,21 @@
       <% end %>
     </div>
     <div class="collapse navbar-collapse" id="main-nav-collapse">
-    <div class="nav navbar-nav navbar-right"> 
-      <% if current_user %>
-        <%= button_to destroy_user_session_path, method: :delete, class: "btn btn-primary navbar-btn" do %>
-        Sign Out <span class="glyphicon glyphicon-user" aria-hidden="true"></span> <%= current_user.username %>
-        <% end %>
-      <% else %>
-        <%= link_to "Login", new_user_session_path, class: 'btn btn-primary navbar-btn', method: :get %>
-        <%= link_to "Signup", new_user_registration_path, class: 'btn btn-success navbar-btn', method: :get %>
-      <% end %>
-    </div > 
-      <ul class="nav navbar-nav navbar-right">
+      <ul class="nav navbar-nav">
         <li><%= link_to "About Us", about_path %></li>
         <li><%= link_to "Contact Us", new_contact_path %></li>
       </ul>
+
+      <div class="nav navbar-nav navbar-right">
+        <% if user_signed_in? %>
+          <%= link_to "Post Code", submit_path, class: 'btn btn-warning navbar-btn', method: :get %>
+          <%= link_to "Sign Out",destroy_user_session_path, method: :delete, class: "btn btn-primary navbar-btn" %>
+        <% else %>
+           <%= link_to "Login", new_user_session_path, class: 'btn btn-primary navbar-btn', method: :get %> 
+           <%= link_to "Signup", new_user_registration_path, class: 'btn btn-success navbar-btn', method: :get %> 
+        <% end %>
+      </div>
+
     </div><!-- /.navbar-collapse -->
   </div>
 </nav>
