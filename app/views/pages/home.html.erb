@@ -1,10 +1,25 @@
 <div class="row">
+	<div class="col-md-10 col-md-offset-1">
 		<div class="jumbotron text-center">
-		<h1><i class="fa fa-code"></i> Chem Code</h1>
-		<br>
-		<h3>Search, save and share chemistry code</h3>
-		<h3>GAMESS, Molpro, Gaussian</h3>
+			<h1><i class="fa fa-code"></i> Chem Code</h1>
+			<br>
+			<h3>search and share chemistry code</h3>
+
+
+				<div class="row">
+					<div class="col-md-10 col-md-offset-1">
+						<div class="col-md-6">
+							<h3> Search Code</h3>
+							<%= link_to "Search Code", root_path, class: 'btn btn-success navbar-btn' %>
+						</div>
+						<div class="col-md-6">
+							<h3> Post Code</h3>
+							<%= link_to "Post Code", submit_path, class: 'btn btn-warning navbar-btn', method: :get %>
+						</div>
+					</div>
+				</div>
 		</div>
+	</div>
 </div>
 
 <div class="row"> 
