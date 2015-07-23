@@ -1,4 +1,7 @@
-<% if posts %>
+<% if posts.present? %>
+<div class="alert alert-success" role="alert">
+ <p>Your keyword returned <strong><%= posts.count %></strong> code snippet(s).</p>
+ </div>
   <% posts.each do |post| %>
  
 	       <div class="panel panel-default">
@@ -24,5 +27,7 @@
  
   <% end %>
 <% else %>
-  <tr><td>No posts</td></tr>
+<div class="alert alert-danger" role="alert">
+ <p>There is no code containing those search terms.  Please enter a valid search keyword. </p>
+ </div>
 <% end %>

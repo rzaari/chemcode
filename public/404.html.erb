@@ -53,18 +53,17 @@
 
 <div class="container">
 
+  <% flash.each do |key,value| %>
+  <!--  Accrording to Rails documentation, content_tag generates HTML of type (div) surrounding the content (value, class). We use this to strucutre the alert according to Bootstrap requirements.
   
+        e.x. <div class="alert alert-success">"Message sent"</div>
+  -->
 
-</body>
-</html>
+    <%= content_tag :div, value, class:"alert alert-#{key}" %>
+  <% end %>
 
-  <!-- This file lives in public/404.html -->
-  <div class="dialog">
-    <div>
-      <h1>The page you were looking for doesn't exist.</h1>
-      <p>You may have mistyped the address or the page may have moved.</p>
-    </div>
-    <p>If you are the application owner check the logs for more information.</p>
-  </div>
+  <%= yield %>
+</div>
+
 </body>
 </html>

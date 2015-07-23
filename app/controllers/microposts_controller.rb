@@ -16,9 +16,9 @@ before_action :logged_in_user, only: [:create]
   def index
   @posts = Micropost.all
   if params[:search]
-    @posts = Micropost.search(params[:search]).order("created_at DESC")
+    @posts = Micropost.search(params[:search]).order("created_at DESC").paginate(:page => params[:page], :per_page => 5)
   else
-    @posts = Micropost.all.order('created_at DESC')
+    @posts = Micropost.all.order('created_at DESC').paginate(:page => params[:page], :per_page => 5)
   end
 end
 
