@@ -1,4 +1,3 @@
-
 <%= form_for(@micropost) do |f| %>
   <div class="form-group">
     <%= f.text_field :heading, placeholder: "Descriptive heading", class: "form-control" %>
@@ -6,5 +5,5 @@
   <div class="form-group">
     <%= f.text_area :content, placeholder: "Enter your code...", class: "form-control", rows: 15 %>
   </div>
-  <%= f.submit "Post Code", class: "btn btn-primary" %>
+  <%= f.submit "Post Code", class: "btn btn-warning" %>
 <% end %>

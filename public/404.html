@@ -1,60 +1,63 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>The page you were looking for doesn't exist (404)</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <style>
-  body {
-    background-color: #EFEFEF;
-    color: #2E2F30;
-    text-align: center;
-    font-family: arial, sans-serif;
-    margin: 0;
-  }
-
-  div.dialog {
-    width: 95%;
-    max-width: 33em;
-    margin: 4em auto 0;
-  }
-
-  div.dialog > div {
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #BBB;
-    border-top: #B00100 solid 4px;
-    border-top-left-radius: 9px;
-    border-top-right-radius: 9px;
-    background-color: white;
-    padding: 7px 12% 0;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
-  }
-
-  h1 {
-    font-size: 100%;
-    color: #730E15;
-    line-height: 1.5em;
-  }
-
-  div.dialog > p {
-    margin: 0 0 1em;
-    padding: 1em;
-    background-color: #F7F7F7;
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #999;
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
-    border-top-color: #DADADA;
-    color: #666;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
-  }
-  </style>
+  <title>Chem Code</title>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
 </head>
-
 <body>
+
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <%= link_to root_path, class: 'navbar-brand' do %>
+        <i class="fa fa-code"></i>
+        Chem Code
+      <% end %>
+    </div>
+    <div class="collapse navbar-collapse" id="main-nav-collapse">
+      <ul class="nav navbar-nav">
+        <li><%= link_to "About Us", about_path %></li>
+        <li><%= link_to "Contact Us", new_contact_path %></li>
+      </ul>
+
+    <%= form_tag(microposts_index_path, :method => "get", id: "search-form", class: "form-inline navbar-form navbar-left", role: "search") do %>
+    <div class="form-group">
+      <%= text_field_tag :search, params[:search], placeholder: "Search ChemCode", class:"form-control" %>
+    </div>
+      <%= submit_tag "Search", class:"btn btn-default" %>
+
+  <% end %>
+
+      <div class="nav navbar-nav navbar-right">
+        <% if user_signed_in? %>
+          <%= link_to "Post Code", submit_path, class: 'btn btn-warning navbar-btn', method: :get %>
+          <%= link_to "Sign Out",destroy_user_session_path, method: :delete, class: "btn btn-primary navbar-btn" %>
+        <% else %>
+           <%= link_to "Login", new_user_session_path, class: 'btn btn-primary navbar-btn', method: :get %> 
+           <%= link_to "Signup", new_user_registration_path, class: 'btn btn-success navbar-btn', method: :get %> 
+        <% end %>
+      </div>
+
+    </div><!-- /.navbar-collapse -->
+  </div>
+</nav>
+
+<div class="container">
+
+  
+
+</body>
+</html>
+
   <!-- This file lives in public/404.html -->
   <div class="dialog">
     <div>
