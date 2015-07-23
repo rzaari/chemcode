@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get '/about' => 'pages#about'
   get '/contact/new' => 'contacts#new'
   get '/submit' => 'pages#submit'
+  get '/microposts/index' => 'microposts#index'
   get    'signup'  => 'users#new'
   get    'login'   => 'sessions#new'
   post   'login'   => 'sessions#create'

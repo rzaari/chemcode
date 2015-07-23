@@ -13,6 +13,16 @@ before_action :logged_in_user, only: [:create]
     end
   end
 
+  def index
+  @posts = Micropost.all
+  if params[:search]
+    @posts = Micropost.search(params[:search]).order("created_at DESC")
+  else
+    @posts = Micropost.all.order('created_at DESC')
+  end
+end
+
+
   private
 
     def micropost_params

@@ -1,0 +1,28 @@
+<% if posts %>
+  <% posts.each do |post| %>
+ 
+	       <div class="panel panel-default">
+	       	  <div class="panel-heading">
+		         <h3 class="panel-title">
+		        	<%= post.heading %>
+		         </h3>
+		     </div>
+			         <div class="panel-body ">
+			        	<samp><%= simple_format(post.content) %></samp>
+			         </div>
+		     	
+
+		         <div class="panel-footer">
+		         	<span class="glyphicon glyphicon-user"></span>
+		         		<em><%= post.user.username %></em>
+		         	<span class= "pull-right" >
+		         		<span class="glyphicon glyphicon-calendar"></span>
+		         		<%= post.user.created_at.strftime("%B %d, %Y") %> 
+		         	</span>
+		         </div>
+		         </div>
+ 
+  <% end %>
+<% else %>
+  <tr><td>No posts</td></tr>
+<% end %>
