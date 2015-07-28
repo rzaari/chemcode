@@ -4,11 +4,15 @@
 			<% if user_signed_in? %>
 				<p class="lead text-center"><%= link_to "Post Code", submit_path, class: 'btn btn-lg btn-warning navbar-btn', method: :get %> and start contributing to the community!</p>
 			<% else %>
-			<div class="jumbotron text-center">
-				<h1><i class="fa fa-code"></i> Chem Code</h1>
-			</div>
-				<p class="lead text-center"><button type="button" class="btn btn-lg btn-default">Search</button> for chemistry input files and code!</p>
-				<p class="lead text-center"><%= link_to "Signup", new_user_registration_path, class: 'btn btn-lg btn-success navbar-btn', method: :get %> to start contributing to the community!</p>
+	
+				<div class="page-header">
+					<h1><strong><i class="fa fa-code"></i> Chem Code</strong></h1>
+				</div>
+				<div class="jumbotron text-center">
+					<h1 class="lead">A community sharing input files and resources for computational chemistry.</h1>
+					<h3 class="text-center"><%= link_to "Signup", new_user_registration_path, class: 'btn btn-xlarge btn-success navbar-btn', method: :get %> to start contributing to the community!</h3>
+				</div>
+				<!-- <p class="lead text-center"><button type="button" class="btn btn-lg btn-default">Search</button> for chemistry input files!</p> -->
 			<% end %>
 		
 	</div>
