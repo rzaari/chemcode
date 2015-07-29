@@ -1,18 +1,12 @@
 Rails.application.routes.draw do
+  get 'users/new'
+
   root 'pages#home'
 
   get '/about' => 'pages#about'
   get '/contact/new' => 'contacts#new'
   get '/submit' => 'pages#submit'
   get '/microposts/index' => 'microposts#index'
-  get    'signup'  => 'users#new'
-  get    'login'   => 'sessions#new'
-  post   'login'   => 'sessions#create'
-  delete 'logout'  => 'sessions#destroy'
-  
-  devise_for :users
-  resources :account_activations, only: [:edit]
-  resources :password_resets,     only: [:new, :create, :edit, :update]
   
   resources :microposts,          only: [:create]
 
