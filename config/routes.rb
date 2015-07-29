@@ -7,10 +7,13 @@ Rails.application.routes.draw do
   get '/contact/new' => 'contacts#new'
   get '/submit' => 'pages#submit'
   get '/microposts/index' => 'microposts#index'
+  get 'signup'  => 'users#new'
   
   resources :microposts,          only: [:create]
 
   resources :contacts
+
+  resources :users
   
 
   

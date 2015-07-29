@@ -7,8 +7,9 @@ ruby '2.2.2'
 gem 'sqlite3', group: [:development, :test]
 # Use postgresql as the database for production
 group :production do
-  gem 'pg'
-  gem 'rails_12factor'
+  gem 'pg', ' 0.18.2'
+  gem 'rails_12factor', ' 0.0.3'
+  gem 'puma', '2.11.1'
 end
 # Use Bootstrap
 gem 'bootstrap-sass', '3.3.1'

@@ -38,15 +38,10 @@
 
   <% end %>
 
-      <div class="nav navbar-nav navbar-right">
-        <% if user_signed_in? %>
-          <%= link_to "Post Code", submit_path, class: 'btn btn-warning navbar-btn', method: :get %>
-          <%= link_to "Sign Out",destroy_user_session_path, method: :delete, class: "btn btn-primary navbar-btn" %>
-        <% else %>
-           <%= link_to "Login", new_user_session_path, class: 'btn btn-primary navbar-btn', method: :get %> 
-           <%= link_to "Signup", new_user_registration_path, class: 'btn btn-success navbar-btn', method: :get %> 
-        <% end %>
-      </div>
+
+<div class="nav navbar-nav navbar-right">
+           <%= link_to "Signup", signup_path, class: 'btn btn-success navbar-btn', method: :get %> 
+      </div> 
 
     </div><!-- /.navbar-collapse -->
   </div>
@@ -64,6 +59,7 @@
   <% end %>
 
 	<%= yield %>
+        <%= debug(params) if Rails.env.development? %> <!-- outputs some debugging info when in development only -->
 </div>
 
 
