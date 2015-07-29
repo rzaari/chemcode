@@ -11,7 +11,6 @@
 				<div class="jumbotron text-center">
 					<h1>A community for sharing input files and resources for computational chemistry.</h1>
 					<p class="text-center"><%= link_to "Signup", new_user_registration_path, class: 'btn btn-xlarge btn-success navbar-btn', method: :get %> to start contributing to the community!</p>
-				</div>
 				<!-- <p class="lead text-center"><button type="button" class="btn btn-lg btn-default">Search</button> for chemistry input files!</p> -->
 			<% end %>
 		
@@ -20,32 +19,43 @@
 
 <div class="row"> 
 	<div class="col-md-10 col-md-offset-1">
-	       <% @allposts.each do |micropost| %>
 
-	       <div class="panel panel-default">
-	       	  <div class="panel-heading">
-		         <h3 class="panel-title">
-		        	<%= micropost.heading %>
-		         </h3>
-		     </div>
-			         <div class="panel-body ">
-			        	<samp><%= simple_format(micropost.content) %></samp>
-			         </div>
-		     	
+		<h3><span class="label label-info"><em><%= @allposts.count %></em> input files and counting</span></h3>
+	    <% @allposts.each do |micropost| %>
 
-		         <div class="panel-footer">
-		         	<span class="glyphicon glyphicon-user"></span>
-		         		<em><%= micropost.user.username %></em>
-		         	<span class= "pull-right" >
-		         		<span class="glyphicon glyphicon-calendar"></span>
-		         		<%= micropost.user.created_at.strftime("%B %d, %Y") %> 
-		         	</span>
-		         </div>
-		         </div>
+	    	<div class="panel panel-default">
 
+	       		<div class="panel-heading">
+			         <h3 class="panel-title">
+			        	<%= micropost.heading %>
+			         </h3>
+		    	</div>
+			    <div class="panel-body ">
+<!-- 			    	<pre><%= micropost.content %></pre> -->
+			    	<samp><%= micropost.content %></samp> 
+			    </div>
 
-	       <% end %>
-	    </div>
+		        <div class="panel-footer">
+			        <div class="container">
+			         	<div class="col-md-4">
+				         	<span class="glyphicon glyphicon-user"></span>
+				         	<em><%= micropost.user.username %></em>
+			         	</div>
+
+						<div class="col-md-4">
+			         		<span class="glyphicon glyphicon-file"></span>
+			         		<%= micropost.software %> 
+			         	</div>
+			     
+						<div class="col-md-4">
+			         		<span class="glyphicon glyphicon-calendar"></span>
+			         		<%= micropost.user.created_at.strftime("%B %d, %Y") %> 
+			        	</div>
+			        </div>
+		        </div>
+
+		    </div>
+	    <% end %>
 	</div>
 </div>
 

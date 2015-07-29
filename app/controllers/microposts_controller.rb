@@ -26,7 +26,7 @@ end
   private
 
     def micropost_params
-      params.require(:micropost).permit(:heading, :content)
+      params.require(:micropost).permit(:heading, :software, :content)
     end
 
 end

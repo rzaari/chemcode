@@ -1,30 +1,38 @@
 <% if posts.present? %>
-<div class="alert alert-success" role="alert">
+<div class="alert alert-info" role="alert">
  <p>Your keyword returned <strong><%= posts.count %></strong> result(s).</p>
  </div>
   <% posts.each do |post| %>
- 
-	       <div class="panel panel-default">
-	       	  <div class="panel-heading">
-		         <h3 class="panel-title">
-		        	<%= post.heading %>
-		         </h3>
-		     </div>
-			         <div class="panel-body ">
-			        	<samp><%= simple_format(post.content) %></samp>
-			         </div>
-		     	
+	    	<div class="panel panel-default">
 
-		         <div class="panel-footer">
-		         	<span class="glyphicon glyphicon-user"></span>
-		         		<em><%= post.user.username %></em>
-		         	<span class= "pull-right" >
-		         		<span class="glyphicon glyphicon-calendar"></span>
-		         		<%= post.user.created_at.strftime("%B %d, %Y") %> 
-		         	</span>
-		         </div>
-		         </div>
- 
+	       		<div class="panel-heading">
+			         <h3 class="panel-title">
+			        	<%= post.heading %>
+			         </h3>
+		    	</div>
+			    <div class="panel-body ">
+			    	<samp><%= post.content %></samp> 
+			    </div>
+
+		        <div class="panel-footer">
+			        <div class="container">
+			         	<div class="col-md-4">
+				         	<span class="glyphicon glyphicon-user"></span>
+				         	<em><%= post.user.username %></em>
+			         	</div>
+
+						<div class="col-md-4">
+			         		<span class="glyphicon glyphicon-file"></span>
+			         		<%= post.software %> 
+			         	</div>
+			     
+						<div class="col-md-4">
+			         		<span class="glyphicon glyphicon-calendar"></span>
+			         		<%= post.user.created_at.strftime("%B %d, %Y") %> 
+			        	</div>
+			        </div>
+		        </div>
+		    </div>
   <% end %>
 <% else %>
 <div class="alert alert-danger" role="alert">

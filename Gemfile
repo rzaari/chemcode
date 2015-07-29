@@ -34,10 +34,12 @@ gem 'spring',        group: :development
 gem 'devise', '3.4.1'
 # Faker gem : generate 'dummy' Lorem Ipsum type text 
 gem 'faker', '~> 1.4.3'
-## Gemfile for pagination
+# Gemfile for pagination
 gem 'will_paginate', '~> 3.0.6'
-## Gemfile to add Bootstrap styling to will_paginate
+# Gemfile to add Bootstrap styling to will_paginate
 gem 'will_paginate-bootstrap'
+# Gemfile to import Excel files to seed database 
+gem 'roo', '~> 2.1.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '3.1.7'
 # Use unicorn as the app server

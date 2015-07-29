@@ -25,16 +25,16 @@
       <% end %>
     </div>
     <div class="collapse navbar-collapse" id="main-nav-collapse">
-      <ul class="nav navbar-nav">
+<!--       <ul class="nav navbar-nav">
         <li><%= link_to "About Us", about_path %></li>
         <li><%= link_to "Contact Us", new_contact_path %></li>
-      </ul>
+      </ul> -->
 
     <%= form_tag(microposts_index_path, :method => "get", id: "search-form", class: "form-inline navbar-form navbar-left", role: "search") do %>
     <div class="form-group">
       <%= text_field_tag :search, params[:search], placeholder: "Search ChemCode", class:"form-control" %>
     </div>
-      <%= submit_tag "Search", class:"btn btn-default" %>
+      <%= submit_tag "Search", class:"btn btn-default", :name => nil %>
 
   <% end %>
 
@@ -65,6 +65,32 @@
 
 	<%= yield %>
 </div>
+
+
+
+  
+<nav class="navbar navbar-default text-center" role="navigation">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <%= link_to root_path, class: 'navbar-brand' do %>
+        <i class="fa fa-code"></i>
+        Chem Code
+      <% end %>
+    </div>
+
+      <ul class="nav navbar-nav">
+        <li><%= link_to "About Us", about_path %></li>
+        <li><%= link_to "Contact Us", new_contact_path %></li>
+      </ul>
+
+
+    <div class="nav navbar-nav navbar-right">
+      <p class="navbar-text">Created in 2014 by Ryan Zaari.</p>
+    </div>
+  </div>
+</nav>
+
+
 
 </body>
 </html>
