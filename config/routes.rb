@@ -6,16 +6,19 @@ Rails.application.routes.draw do
   get '/contact/new' => 'contacts#new'
   get '/submit' => 'pages#submit'
   get '/microposts/index' => 'microposts#index'
-  get 'signup'  => 'users#new'
-  get    'login'   => 'sessions#new'
-  post   'login'   => 'sessions#create'
-  delete 'logout'  => 'sessions#destroy'
+  get '/signup'  => 'users#new'
+  #post '/users' => 'users#create'
+  get    '/login'   => 'sessions#new'
+  post   '/login'   => 'sessions#create'
+  delete '/logout'  => 'sessions#destroy'
+
+  resources :users
   
   resources :microposts,          only: [:create]
 
   resources :contacts
 
-  resources :users
+
   
 
   
