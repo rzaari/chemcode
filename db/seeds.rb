@@ -29,10 +29,11 @@
 	require 'roo'
 
 	email = "ryanzaari@gmail.com"
+    name = "Ryan Zaari"
 	username = "rzaari"
 	password = "@monkey2"
 
-	User.create!( email: email, username: username, password: password, password_confirmation: password ) 
+	User.create!( email: email, name: name, username: username, password: password, password_confirmation: password ) 
 
     ex = Roo::Excelx.new("./code.xlsx")
     ex.default_sheet = ex.sheets[0]              #Mention the sheet number (0 is the first sheet, 1 is second sheet, etc.)
