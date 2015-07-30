@@ -1,6 +1,5 @@
 class MicropostsController < ApplicationController
 
-before_filter :authorize
 
  def create
     @micropost = current_user.microposts.build(micropost_params)
