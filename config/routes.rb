@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   
+  get 'password_resets/new'
+
+  get 'password_resets/edit'
+
   root 'pages#home'
 
   get '/about' => 'pages#about'
@@ -13,6 +17,8 @@ Rails.application.routes.draw do
   delete '/logout'  => 'sessions#destroy'
 
   resources :users
+  resources :account_activations, only: [:edit]
+  resources :password_resets,     only: [:new, :create, :edit, :update]
   
   resources :microposts,          only: [:create]
 
@@ -20,10 +26,23 @@ Rails.application.routes.draw do
 
 
   
-# catches access to unknown pages and results in a redirect to /errors/not_found.html.erb
-  MyApp::Application.routes.draw do
-    get "*any", via: :all, to: "errors#not_found"
-  end
+  # catches access to unknown pages and results in a redirect to /errors/not_found.html.erb
+  # needs to be the last action on this page
+  # MyApp::Application.routes.draw do
+  get 'password_resets/new'
+
+  get 'password_resets/edit'
+
+  #   get "*any", via: :all, to: "errors#not_found"
+  # end
+
+
+
+
+
+
+
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
