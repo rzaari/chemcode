@@ -29,10 +29,6 @@ Rails.application.routes.draw do
   # catches access to unknown pages and results in a redirect to /errors/not_found.html.erb
   # needs to be the last action on this page
   # MyApp::Application.routes.draw do
-  get 'password_resets/new'
-
-  get 'password_resets/edit'
-
   #   get "*any", via: :all, to: "errors#not_found"
   # end
 
