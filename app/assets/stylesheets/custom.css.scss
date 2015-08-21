@@ -18,6 +18,10 @@ body {
 	color: white;
 }
 
+.navbar-default .navbar-nav > a {
+  color: white;
+}
+
 .glyphicon {
 	color:#1abc9c;
 }
@@ -43,6 +47,14 @@ samp
 {
   font-family: "Courier New", monospace;
   white-space: pre;
+}
+
+#page_404 {
+  font-family:Courier;
+  color: #CCCCCC;
+  background: #000000;
+  padding: 10px;
+  font-size:3em;
 }
 
 /* mixins, variables, etc. */

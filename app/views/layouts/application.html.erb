@@ -32,7 +32,7 @@
 
     <%= form_tag(microposts_index_path, :method => "get", id: "search-form", class: "form-inline navbar-form navbar-left", role: "search") do %>
     <div class="form-group">
-      <%= text_field_tag :search, params[:search], placeholder: "Search ChemCode", class:"form-control" %>
+      <%= text_field_tag :search, params[:search], placeholder: "Search input files for...", class:"form-control" %>
     </div>
       <%= submit_tag "Search", class:"btn btn-default", :name => nil %>
 
@@ -81,11 +81,9 @@
         Chem Code
       <% end %>
     </div>
-<!--       <ul class="nav navbar-nav">
-        <li><%= link_to "About Us", about_path %></li>
-        <li><%= link_to "Contact Us", new_contact_path %></li>
-      </ul> -->
+
     <div class="nav navbar-nav navbar-right">
+       <%= link_to "Problems?  Contact us.", new_contact_path, class:"navbar-text"%>
       <p class="navbar-text">Created in 2014 by Ryan Zaari.</p>
     </div>
   </div>

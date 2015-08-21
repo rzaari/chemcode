@@ -20,8 +20,11 @@ Rails.application.routes.draw do
 
 
   
+# catches access to unknown pages and results in a redirect to /errors/not_found.html.erb
+  MyApp::Application.routes.draw do
+    get "*any", via: :all, to: "errors#not_found"
+  end
 
-  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
