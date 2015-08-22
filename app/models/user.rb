@@ -30,7 +30,7 @@ class User < ActiveRecord::Base
     # Returns true if the given token matches the digest.
 	  def authenticated?(attribute, token)
 	    digest = send("#{attribute}_digest")
-	    return false if digest.nil?
+    	return false if remember_digest.nil?
 	    BCrypt::Password.new(digest).is_password?(token)
 	  end
 
@@ -60,6 +60,16 @@ class User < ActiveRecord::Base
 	  # Returns true if a password reset has expired.
 	  def password_reset_expired?
 	    reset_sent_at < 2.hours.ago
+	  end
+
+	def remember
+	    self.remember_token = User.new_token
+	    update_attribute(:remember_digest, User.digest(remember_token))
+  	end
+
+	  # Forgets a user.
+	  def forget
+	    update_attribute(:remember_digest, nil)
 	  end
   
 
