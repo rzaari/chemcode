@@ -1,4 +1,27 @@
 <% provide(:title, @user.name) %>
-<h1>
-  <%= @user.name %>
-</h1>
+
+<div class="row">
+	<div class="col-md-3">
+		<h1> Profile </h1>
+		<hr>
+		<dl >
+		<dt>name</dt>
+		<dd><%= @user.name %></dd>
+	</br>
+		<dt>username</dt>
+		<dd><%= @user.username %></dd>
+</br>
+		<dt>email</dt>
+		<dd><%= @user.email %></dd>
+		</dl>
+	</div>
+
+	<div class="col-md-8 col-md-offset-1">
+		<h1> Posted code (<%= current_user.microposts.count %>)</h1>
+		<ul class="list-group">
+			<% current_user.microposts.order("created_at DESC").each do |micropost| %>
+				<li class="list-group-item"><%= micropost.heading %></li>
+			<% end %>
+		</ul>
+	</div>
+</div>
