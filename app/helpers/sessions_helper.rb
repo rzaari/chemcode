@@ -29,11 +29,8 @@ module SessionsHelper
     !current_user.nil?
   end
 
-<<<<<<< HEAD
-    # Forgets a persistent session.
-=======
+
   # Forgets a persistent session.
->>>>>>> Remember_me_8_4
   def forget(user)
     user.forget
     cookies.delete(:user_id)
