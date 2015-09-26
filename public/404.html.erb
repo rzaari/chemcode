@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Chem Code</title>
+  <title>ChemCoder</title>
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -20,7 +20,7 @@
       </button>
       <%= link_to root_path, class: 'navbar-brand' do %>
         <i class="fa fa-code"></i>
-        Chem Code
+        ChemCoder
       <% end %>
     </div>
     <div class="collapse navbar-collapse" id="main-nav-collapse">
@@ -31,7 +31,7 @@
 
     <%= form_tag(microposts_index_path, :method => "get", id: "search-form", class: "form-inline navbar-form navbar-left", role: "search") do %>
     <div class="form-group">
-      <%= text_field_tag :search, params[:search], placeholder: "Search ChemCode", class:"form-control" %>
+      <%= text_field_tag :search, params[:search], placeholder: "Search ChemCoder", class:"form-control" %>
     </div>
       <%= submit_tag "Search", class:"btn btn-default" %>
 
